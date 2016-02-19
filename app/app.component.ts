@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
-import {Hero} from '/hero'
+import {Hero} from './hero';
+import {HeroDetailComponent} from './hero-detail.component';
 
 @Component({
 	selector: 'my-app',
@@ -13,6 +14,7 @@ import {Hero} from '/hero'
 				<span class="badge">{{hero.id}}</span> {{hero.name}}
 			</li>
 		</ul>
+		<my-hero-detail [hero]="selectedHero"></my-hero-detail>
 		`,
 	styles: [`
 		.selected {
@@ -61,7 +63,8 @@ import {Hero} from '/hero'
 			margin-right: .8em;
 			border-radius: 4px 0px 0px 4px;
 		}
-	`]
+	`],
+	directives: [HeroDetailComponent]
 })
 export class AppComponent {
 	public title: 'Tour of Heroes';

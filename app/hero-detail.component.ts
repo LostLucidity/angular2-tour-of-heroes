@@ -11,7 +11,8 @@ import {Component} from 'angular2/core';
 				<input [(ngModel)]="hero.name" placeholder="name">
 			</div>
 		</div>
-	`
+	`,
+	inputs: ['hero']
 })
 
 export class HeroDetailComponent {
